@@ -23,7 +23,7 @@ next_id += 1
 
 @app.route("/")
 def show_hi():
-    return render_template("index.html")
+    return render_template("index.html", tasks=tasks.values())
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=8080, debug=True)

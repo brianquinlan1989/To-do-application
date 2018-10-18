@@ -10,7 +10,18 @@
 
 <body>
     
-    <p>Hi</p>
+    <h1>To Do List</h1>
+    
+    <hr>
+    
+    {% for t in tasks %}
+    <p>{{ t.id }}</p>
+    <p>{{ t.name }}</p>
+    <p>{{ t.description }}</p>
+    <p>{{ t.is_urgent }}</p>
+    {% endfor %}
+    
+ 
     
     
     
