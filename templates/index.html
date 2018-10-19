@@ -9,9 +9,13 @@
     <p>{{ t.name }}</p>
     <p>{{ t.description }}</p>
     <p>{{ t.is_urgent }}</p>
+    <p>
+        <a href="/edit/{{ t.id }}">Edit</a>
+    </p>
     {% endfor %}
     
     <a href="/add">Add Task</a>
+    
     
     
 {% endblock content%}

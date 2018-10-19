@@ -41,6 +41,22 @@ def show_form():
         return redirect("/")
     else:
         return render_template("todo_form.html")
+        
+        
+@app.route("/edit/<int:id>", methods =["GET", "POST"])
+def show_edit_form(id):
+    if request.method == "POST":
+        edited_item = {
+            "id": id,
+    		"name": request.form["add_todo"],
+    		"description": request.form["add_description"],
+    		"is_urgent": "is_urgent" in request.form
+        }
+        
+        tasks[id] = edited_item
+        return redirect("/")
+    else:
+        return render_template("edit_task_form.html", task=tasks[id])
     
 
     
