@@ -9,13 +9,15 @@ tasks = {
 		"id": 1,
 		"name": "get coffee",
 		"description": "none of that cheap stuff",
-		"is_urgent": False
+		"is_urgent": False,
+		"is_done": True,
 	},
 	2 : {
 		"id": 2,
 		"name": "get milk",
 		"description": "in a carton",
-		"is_urgent": True
+		"is_urgent": True,
+		"is_done": False,
 	},
 }
 
@@ -33,7 +35,8 @@ def show_form():
             "id": next_id,
     		"name": request.form["add_todo"],
     		"description": request.form["add_description"],
-    		"is_urgent": "is_urgent" in request.form
+    		"is_urgent": "is_urgent" in request.form,
+    		"done": "is_done" in request.form
         }
         
         tasks[next_id] = new_item
@@ -50,7 +53,8 @@ def show_edit_form(id):
             "id": id,
     		"name": request.form["add_todo"],
     		"description": request.form["add_description"],
-    		"is_urgent": "is_urgent" in request.form
+    		"is_urgent": "is_urgent" in request.form,
+    		"is_done": "is_done" in request.form
         }
         
         tasks[id] = edited_item

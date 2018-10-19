@@ -1,24 +1,25 @@
-{% extends "base.html" %} 
-    
-{% block content%}
+{% extends "base.html" %} {% block content%}
 
 
-    <h2>Edit Form</h2>
-    
-    <hr>
-    
-    <form action="/edit/{{ task.id }}" method="POST">
-        <label for="id_name">Name: </label>
-        <input type="text" id="id_name" name="add_todo" value="{{ task.name }}"/></br>
-        
-        <label for="id_decription">Description: </label>
-        <input type="text" id="id_name" name="add_description" value="{{ task.description }}"></br>
-        
-        <label for="id_urgent"></label>
-        <input type="checkbox" id="id_urgent" name="is_urgent" {% if task.is_urgent %} checked {% endif %}>Urgent</br>
-        
-        
-        <input type="submit" value="Save"/>
-    </form>
+<h2>Edit Form</h2>
+
+<hr>
+
+<form action="/edit/{{ task.id }}" method="POST">
+    <label for="id_name">Name: </label>
+    <input type="text" id="id_name" name="add_todo" value="{{ task.name }}" /></br>
+
+    <label for="id_decription">Description: </label>
+    <input type="text" id="id_name" name="add_description" value="{{ task.description }}"></br>
+
+    <label for="id_urgent"></label>
+    <input type="checkbox" id="id_urgent" name="is_urgent" {% if task.is_urgent %} checked {% endif %}>Urgent</br>
+
+    <label for="id_done"></label>
+    <input type="checkbox" id="id_done" name="is_done" {% if task.is_done %} checked {% endif %}>Done</br>
+
+
+    <input type="submit" value="Save" />
+</form>
 
 {% endblock content%}

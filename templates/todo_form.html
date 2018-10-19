@@ -1,24 +1,26 @@
-{% extends "base.html" %} 
-    
-{% block content%}
+{% extends "base.html" %} {% block content%}
 
 
-    <h2>To Do Form</h2>
-    
-    <hr>
-    
-    <form method="POST">
-        <label for="id_name">Name: </label>
-        <input type="text" id="id_name" name="add_todo" placeholder="Add Item..."/></br>
-        
-        <label for="id_decription">Description: </label>
-        <input type="text" id="id_name" name="add_description" placeholder="Add Description..."></br>
-        
-        <label for="id_urgent"></label>
-        <input type="checkbox" id="id_urgent" name="is_urgent">Urgent</br>
-        
-        
-        <input type="submit" value="Add"/>
-    </form>
+<h2>To Do Form</h2>
+
+<hr>
+
+<form method="POST">
+    <label for="id_name">Name: </label>
+    <input type="text" id="id_name" name="add_todo" placeholder="Add Item..." /></br>
+
+    <label for="id_decription">Description: </label>
+    <input type="text" id="id_name" name="add_description" placeholder="Add Description..."></br>
+
+    <label for="id_urgent"></label>
+    <input type="checkbox" id="id_urgent" name="is_urgent">Urgent</br>
+
+    <label for="id_done"></label>
+    <input type="checkbox" id="id_done" name="is_done">Done</br>
+
+
+
+    <input type="submit" value="Add" />
+</form>
 
 {% endblock content%}
